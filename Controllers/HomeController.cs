@@ -113,8 +113,5 @@ namespace weddingWebapp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-        //sexooooooooo
     }
 }
