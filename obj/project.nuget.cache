@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oo2NTLEix8i3WryM2pXXSmoy+UEtIPWnBm4F0CbQNDfHze3BomhCqjepO2RWmWLwGScQANx+ehTk/K1ZJXsWRA==",
+  "dgSpecHash": "tO31UY4WK/3+lWo5qgjLOxdYrL5u+4zPYKZZEQe6G4oZkIxWPK3PWrvDNoQjVcKKER1838JzVrD0emqK14rAjw==",
   "success": true,
-  "projectFilePath": "N:\\MATRIMONIO\\weddingWebapp\\weddingWebapp.csproj",
+  "projectFilePath": "N:\\Repo\\weddingwebapp\\weddingWebapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iquir\\.nuget\\packages\\mailkit\\3.4.2\\mailkit.3.4.2.nupkg.sha512",
     "C:\\Users\\iquir\\.nuget\\packages\\mimekit\\3.4.2\\mimekit.3.4.2.nupkg.sha512",

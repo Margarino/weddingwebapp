@@ -496,11 +496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "N:\\MATRIMONIO\\weddingWebapp\\weddingWebapp.csproj",
+      "projectUniqueName": "N:\\Repo\\weddingwebapp\\weddingWebapp.csproj",
       "projectName": "weddingWebapp",
-      "projectPath": "N:\\MATRIMONIO\\weddingWebapp\\weddingWebapp.csproj",
+      "projectPath": "N:\\Repo\\weddingwebapp\\weddingWebapp.csproj",
       "packagesPath": "C:\\Users\\iquir\\.nuget\\packages\\",
-      "outputPath": "N:\\MATRIMONIO\\weddingWebapp\\obj\\",
+      "outputPath": "N:\\Repo\\weddingwebapp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\iquir\\AppData\\Roaming\\NuGet\\NuGet.Config",
