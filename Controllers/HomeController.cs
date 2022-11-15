@@ -9,6 +9,8 @@ using weddingWebapp.Models;
 
 using MailKit.Net.Smtp;
 using MimeKit;
+using Microsoft.AspNetCore.Hosting.Server;
+using System.Security.Cryptography;
 
 namespace weddingWebapp.Controllers
 {
@@ -115,3 +117,10 @@ namespace weddingWebapp.Controllers
         }
     }
 }
+
+
+// matrimak_ db name 
+
+//use something arround the lines of this 
+//Scaffold-DbContext "Server=localhost; port=3306;Database=myDataBase;Uid=root;Pwd=1984;" MySql.EntityFrameworkCore -Out Models -force -verbose
+
