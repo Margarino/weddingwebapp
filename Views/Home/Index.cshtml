@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Matrimonio Makarena y Raimundo";
 }
 
@@ -158,6 +158,9 @@ https://templatemo.com/tm-556-catalog-z
     
     <script src="js/plugins.js"></script>
     <script>
+        $(document).ready(function(){
+            $('.parallax-mirror').addClass('d-none');
+        });
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
