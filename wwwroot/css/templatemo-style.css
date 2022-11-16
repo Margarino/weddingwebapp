@@ -629,6 +629,23 @@ select:not([multiple]) {
 
     .tm-social-links li { margin-right: 3px; }
 }
+.container-imagen {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+}
+.container-imagen > img {
+    position:absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+}
 
 .circular--square {
     border-top-left-radius: 50% 50%;
