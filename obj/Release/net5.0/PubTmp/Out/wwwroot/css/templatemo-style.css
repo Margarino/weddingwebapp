@@ -637,7 +637,10 @@ select:not([multiple]) {
     border-bottom-left-radius: 50% 50%;
     
 }
-
+.loaded{
+    background-image: url(/img/pic1.jpg);
+    background-size: cover;
+}
 .cool-font {
     font-family: "Lucida Handwriting", "Lucida Handwriting", Cursive;
 }
