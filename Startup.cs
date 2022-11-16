@@ -9,6 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore.Extensions;
+using weddingWebapp.Models;
+
+
 namespace weddingWebapp
 {
     public class Startup
@@ -24,6 +30,7 @@ namespace weddingWebapp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<matrimak_Context>(options =>options.UseMySQL("Server = localhost; port = 3306; Database = matrimak_; Uid = root; Pwd = 1984; ")); ///FUC K
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +52,8 @@ namespace weddingWebapp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            
 
             app.UseEndpoints(endpoints =>
             {
