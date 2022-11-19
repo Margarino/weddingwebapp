@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using weddingWebapp.Models;
+using weddingWebapp.Helpers;
+
 
 //using MailKit.Net.Smtp;
 //using MimeKit;
@@ -23,10 +25,14 @@ namespace weddingWebapp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private HelperMail helpermail;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, HelperMail helpermail)
+            
         {
             _logger = logger;
+            this.helpermail = helpermail;
         }
 
         public IActionResult Index()
@@ -61,31 +67,32 @@ namespace weddingWebapp.Controllers
             return View();
         }
 
+
         [HttpPost]
-        public IActionResult Regalo(MailModel a)
+        public IActionResult Regalo(MailModel aux)
         {
-            var smtpClient = new SmtpClient("webmail.matrimakayrai.cl")
-            {
-                Port = 465,
-                Credentials = new System.Net.NetworkCredential("regalos@matrimakayrai.cl", "securepassword123"),
-                EnableSsl = false,
-            };
+            
+            //string mensajefinal = "<h1>Proyecto Techclub Tajamar(MVC NetCore Correos)<h1/> <h4>"+aux.Nota.ToString()+"</h4>";
 
-
-
-
-            smtpClient.Send("email", "recipient", "subject", "body");
-
-
-            //FINISH
-
-
-
-
+            helpermail.SendMail(aux.Email, "Gracias por tu regalo!", "Muchas gracias por tu regalo! aqui tu mensaje: "+aux.Nota+" para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en" +
+                " 003270023807 Cuenta corriente bco chile 17118339-1    RMuencke@hotmail.com  ");
+            ViewData["MENSAJE"] = "Mensaje enviado a ";
             return View();
 
         }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

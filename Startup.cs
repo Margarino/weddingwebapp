@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Extensions;
 using weddingWebapp.Models;
 
+using weddingWebapp.Helpers;
+
 
 namespace weddingWebapp
 {
@@ -29,6 +31,9 @@ namespace weddingWebapp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IConfiguration>(this.Configuration);
+            services.AddSingleton<HelperMail>();
+
             services.AddControllersWithViews();
             services.AddDbContext<matrimak_Context>(options =>options.UseMySQL("Server = localhost; port = 3306; Database = matrimak_; Uid = root; Pwd = 1984; ")); ///FUC K
         }
