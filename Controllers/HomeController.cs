@@ -7,10 +7,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using weddingWebapp.Models;
 
-using MailKit.Net.Smtp;
-using MimeKit;
+//using MailKit.Net.Smtp;
+//using MimeKit;
 using Microsoft.AspNetCore.Hosting.Server;
 using System.Security.Cryptography;
+//using MailKit.Security;
+
+
+
+using System.Net.Mail;  // g(old)
+
 
 namespace weddingWebapp.Controllers
 {
@@ -58,38 +64,23 @@ namespace weddingWebapp.Controllers
         [HttpPost]
         public IActionResult Regalo(MailModel a)
         {
-            MimeMessage message = new MimeMessage();
-            BodyBuilder bodyBuilder = new BodyBuilder();
-            SmtpClient client = new SmtpClient();
+            var smtpClient = new SmtpClient("webmail.matrimakayrai.cl")
+            {
+                Port = 465,
+                Credentials = new System.Net.NetworkCredential("regalos@matrimakayrai.cl", "securepassword123"),
+                EnableSsl = false,
+            };
 
 
-            //basic stuff
-            MailboxAddress from = new MailboxAddress("Matrimonio Makarena Raimundo",
-            "matrimoniomr@outlook.com");
-            message.From.Add(from);
-
-            MailboxAddress to = new MailboxAddress(a.Nombre,
-            a.Email);
-            message.To.Add(to);
-            message.Subject = "Mensaje de prueba";
 
 
-            //actual message
-            bodyBuilder.HtmlBody = "<h1>Mensaje de prueba</h1>";
-            bodyBuilder.TextBody = a.Nota;
-
-            message.Body = bodyBuilder.ToMessageBody();
+            smtpClient.Send("email", "recipient", "subject", "body");
 
 
-            //connection & authentication
-            client.Connect("smtp-mail.outlook.com", 587, false); //ssl
-            client.Authenticate("matrimoniomr@outlook.com", "securepassword123");
+            //FINISH
 
 
-            //sending
-            client.Send(message);
-            client.Disconnect(true);
-            client.Dispose();
+
 
             return View();
 
