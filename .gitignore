@@ -1,0 +1,6 @@
+
+*.vsidx
+
+obj/Debug/net5.0/
+
+*.cache
