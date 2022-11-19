@@ -1,6 +1,9 @@
 
 *.vsidx
-
-obj/Debug/net5.0/
-
+obj/Debug/net5.0/*
 *.cache
+.vs/
+
+obj/
+
+bin/Debug/net5.0/
