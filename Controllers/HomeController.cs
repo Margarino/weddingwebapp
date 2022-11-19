@@ -74,22 +74,18 @@ namespace weddingWebapp.Controllers
             
             //string mensajefinal = "<h1>Proyecto Techclub Tajamar(MVC NetCore Correos)<h1/> <h4>"+aux.Nota.ToString()+"</h4>";
 
+
+
+
+
+
+
             helpermail.SendMail(aux.Email, "Gracias por tu regalo!", "Muchas gracias por tu regalo! aqui tu mensaje: "+aux.Nota+" para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en" +
                 " 003270023807 Cuenta corriente bco chile 17118339-1    RMuencke@hotmail.com  ");
-            ViewData["MENSAJE"] = "Mensaje enviado a ";
+            ViewData["MENSAJE"] = "Mensaje enviado a " + aux.Email.ToString();
             return View();
 
         }
-
-
-
-
-
-
-
-
-
-
 
 
 
