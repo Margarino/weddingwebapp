@@ -1,4 +1,4 @@
-﻿@model weddingWebapp.Models.Regalo
+﻿@model weddingWebapp.DataAccess.DataObjects.Regalo
 
 @{
     ViewData["Title"] = "Delete";
@@ -18,27 +18,27 @@
             @Html.DisplayFor(model => model.NombreRegalo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CostoRegalo)
+            @Html.DisplayNameFor(model => model.NombreUsuario)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CostoRegalo)
+            @Html.DisplayFor(model => model.NombreUsuario)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescripcionRegalo)
+            @Html.DisplayNameFor(model => model.Monto)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescripcionRegalo)
+            @Html.DisplayFor(model => model.Monto)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Path)
+            @Html.DisplayNameFor(model => model.Notaregalo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Path)
+            @Html.DisplayFor(model => model.Notaregalo)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="IdRegalo" />
+        <input type="hidden" asp-for="Idregalo" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

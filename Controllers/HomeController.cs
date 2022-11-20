@@ -55,10 +55,30 @@ namespace weddingWebapp.Controllers
             return View();
         }
 
-        public IActionResult Old()
+        public IActionResult Login()
         {
             return View();
         }
+
+
+
+        [HttpPost]
+        public IActionResult Login(loginmodel aux)  //laziest login i have ever made.
+        {
+            if (ModelState.IsValid)
+            {
+                if (aux.username == "mantenedorRegalos" && aux.password == "SecurePassword.123")
+                {
+                    return RedirectToAction("Index", "Regaloes");
+                }
+                
+            }
+            return RedirectToAction("index");
+
+
+        }
+
+
 
 
 
@@ -66,18 +86,12 @@ namespace weddingWebapp.Controllers
         {
             return View();
         }
-
-
+ 
         [HttpPost]
         public IActionResult Regalo(MailModel aux)
         {
             
             //string mensajefinal = "<h1>Proyecto Techclub Tajamar(MVC NetCore Correos)<h1/> <h4>"+aux.Nota.ToString()+"</h4>";
-
-
-
-
-
 
 
             helpermail.SendMail(aux.Email, "Gracias por tu regalo!", "Muchas gracias por tu regalo! aqui tu mensaje: "+aux.Nota+" para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en" +
@@ -88,21 +102,6 @@ namespace weddingWebapp.Controllers
         }
 
 
-
-
-
-
-
-        public IActionResult Checkout()
-        {
-            return View();
-        }
-
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,4 +1,4 @@
-﻿@model weddingWebapp.Models.Regalo
+﻿@model weddingWebapp.DataAccess.DataObjects.Regalo
 
 @{
     ViewData["Title"] = "Create";
@@ -18,19 +18,19 @@
                 <span asp-validation-for="NombreRegalo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CostoRegalo" class="control-label"></label>
-                <input asp-for="CostoRegalo" class="form-control" />
-                <span asp-validation-for="CostoRegalo" class="text-danger"></span>
+                <label asp-for="NombreUsuario" class="control-label"></label>
+                <input asp-for="NombreUsuario" class="form-control" />
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DescripcionRegalo" class="control-label"></label>
-                <input asp-for="DescripcionRegalo" class="form-control" />
-                <span asp-validation-for="DescripcionRegalo" class="text-danger"></span>
+                <label asp-for="Monto" class="control-label"></label>
+                <input asp-for="Monto" class="form-control" />
+                <span asp-validation-for="Monto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Path" class="control-label"></label>
-                <input asp-for="Path" class="form-control" />
-                <span asp-validation-for="Path" class="text-danger"></span>
+                <label asp-for="Notaregalo" class="control-label"></label>
+                <input asp-for="Notaregalo" class="form-control" />
+                <span asp-validation-for="Notaregalo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

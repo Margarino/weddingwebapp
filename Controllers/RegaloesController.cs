@@ -5,26 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using weddingWebapp.Models;
+using weddingWebapp.DataAccess.DataObjects;
 
 namespace weddingWebapp.Controllers
 {
-    public class RegaloController : Controller
+    public class RegaloesController : Controller
     {
         private readonly matrimak_Context _context;
 
-        public RegaloController(matrimak_Context context)
+        public RegaloesController(matrimak_Context context)
         {
             _context = context;
         }
 
-        // GET: Regalo
+        // GET: Regaloes
         public async Task<IActionResult> Index()
         {
             return View(await _context.Regalos.ToListAsync());
         }
 
-        // GET: Regalo/Details/5
+        // GET: Regaloes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace weddingWebapp.Controllers
             }
 
             var regalo = await _context.Regalos
-                .FirstOrDefaultAsync(m => m.IdRegalo == id);
+                .FirstOrDefaultAsync(m => m.Idregalo == id);
             if (regalo == null)
             {
                 return NotFound();
@@ -42,18 +42,18 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regalo/Create
+        // GET: Regaloes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Regalo/Create
+        // POST: Regaloes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdRegalo,NombreRegalo,CostoRegalo,DescripcionRegalo,Path")] Regalo regalo)
+        public async Task<IActionResult> Create([Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo")] Regalo regalo)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regalo/Edit/5
+        // GET: Regaloes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,14 +80,14 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // POST: Regalo/Edit/5
+        // POST: Regaloes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdRegalo,NombreRegalo,CostoRegalo,DescripcionRegalo,Path")] Regalo regalo)
+        public async Task<IActionResult> Edit(int id, [Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo")] Regalo regalo)
         {
-            if (id != regalo.IdRegalo)
+            if (id != regalo.Idregalo)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace weddingWebapp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RegaloExists(regalo.IdRegalo))
+                    if (!RegaloExists(regalo.Idregalo))
                     {
                         return NotFound();
                     }
@@ -115,7 +115,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regalo/Delete/5
+        // GET: Regaloes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,7 +124,7 @@ namespace weddingWebapp.Controllers
             }
 
             var regalo = await _context.Regalos
-                .FirstOrDefaultAsync(m => m.IdRegalo == id);
+                .FirstOrDefaultAsync(m => m.Idregalo == id);
             if (regalo == null)
             {
                 return NotFound();
@@ -133,7 +133,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // POST: Regalo/Delete/5
+        // POST: Regaloes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -146,7 +146,7 @@ namespace weddingWebapp.Controllers
 
         private bool RegaloExists(int id)
         {
-            return _context.Regalos.Any(e => e.IdRegalo == id);
+            return _context.Regalos.Any(e => e.Idregalo == id);
         }
     }
 }
