@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using weddingWebapp.DataAccess.DataObjects;
 
 namespace weddingWebapp.Controllers
@@ -148,5 +150,25 @@ namespace weddingWebapp.Controllers
         {
             return _context.Regalos.Any(e => e.Idregalo == id);
         }
+
+        public IActionResult pushToTable()
+        {
+            matrimak_Context contex = new matrimak_Context();
+            var memoryStream = new MemoryStream();
+            var data = contex.Regalos.ToArray();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; //you greedy fucks
+            ExcelPackage excel = new ExcelPackage();
+            var workSheet = excel.Workbook.Worksheets.Add("Lista Regalos");
+            workSheet.Cells[1, 1].LoadFromCollection(data, true);
+            excel.SaveAs(memoryStream);
+            memoryStream.Position = 0;
+            string filename = "Lista Regalos.xlsx";
+            string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            return File(memoryStream, contentType, filename);
+
+        }
+
+
+
     }
 }
