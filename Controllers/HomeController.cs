@@ -197,12 +197,6 @@ namespace weddingWebapp.Controllers
 
             }
 
-
-
-
-
-
-
             return View();
         }
  
