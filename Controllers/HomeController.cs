@@ -90,6 +90,14 @@ namespace weddingWebapp.Controllers
 
         public IActionResult Regalo()
         {
+            string name = "John Doe";
+            if (!String.IsNullOrEmpty(HttpContext.Request.Query["name"]))
+                name = HttpContext.Request.Query["name"];
+
+            Console.WriteLine(name);
+
+            ViewBag.titulo_producto = name;
+
             return View();
         }
  
