@@ -73,7 +73,7 @@ https://templatemo.com/tm-556-catalog-z
         </div>
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <img src="~/img/couple.jpg" alt="Image" class="img-fluid">
+                <img src="@ViewBag.rutaImagen" alt="Image" class="img-fluid">
             </div>
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="tm-bg-gray tm-video-details">
@@ -81,7 +81,11 @@ https://templatemo.com/tm-556-catalog-z
                     <h3 class="tm-text-gray-dark mb-3">@ViewBag.titulo_producto</h3>
                     <p class="mb-4">
                         @ViewBag.descripcion_producto
-                    </p>                            
+                    </p>  
+                    
+                    <p class="mb-4">
+                        el valor de este regalo es de @ViewBag.costo
+                    </p>
                     
                 </div>
             </div>

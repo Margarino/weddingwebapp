@@ -96,9 +96,36 @@ namespace weddingWebapp.Controllers
                 ViewBag.titulo_producto = "Desayuno en luna de miel";
                 ViewBag.descripcion_producto = "Un desayuno romantico en nuestra luna de miel";
                 ViewBag.costo = "30000"; //Remember to parse into a number
-                ViewBag.rutaImagen = "";
+                ViewBag.rutaImagen = "/img/regalos/desayuno.bmp";
             }
-           
+            if (opcion == "2") {
+                ViewBag.titulo_producto = "Experiencia Outdoor";
+                ViewBag.descripcion_producto = "Experiencia al aire libre en nuestra luna de miel";
+                ViewBag.costo = "50000"; //Remember to parse into a number
+                ViewBag.rutaImagen = "/img/regalos/ExperienciaOutdoor.png";
+            }
+            if (opcion == "3")
+            {
+                ViewBag.titulo_producto = "Dia de Spa";
+                ViewBag.descripcion_producto = "Un dia entero dedicado a relajarnos en un Spa. ";
+                ViewBag.costo = "60000"; //Remember to parse into a number
+                ViewBag.rutaImagen = "/img/regalos/desayuno-luna-de-miel.jpg";
+            }
+            if (opcion == "4")
+            {
+                ViewBag.titulo_producto = "Cena romantica";
+                ViewBag.descripcion_producto = "Una noche romantica e inolvidable en nuestra luna de miel";
+                ViewBag.costo = "80000"; //Remember to parse into a number
+                ViewBag.rutaImagen = "/img/regalos/cena romantica.jpg";
+            }
+            if (opcion == "5")
+            {
+                ViewBag.titulo_producto = "Noche de hotel";
+                ViewBag.descripcion_producto = "Una noche de estadia en un hotel lujoso para nosotros";
+                ViewBag.costo = "100000"; //Remember to parse into a number
+                ViewBag.rutaImagen = "/img/regalos/hotellunademiel.jpg";
+            }
+
 
             return View();
         }
