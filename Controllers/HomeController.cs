@@ -93,53 +93,84 @@ namespace weddingWebapp.Controllers
         public IActionResult Regalo()
         {
             string opcion = HttpContext.Request.Query["opcion"].ToString();
-            if (opcion == "1") {
-                ViewBag.titulo_producto = "Desayuno en luna de miel";
-                ViewBag.descripcion_producto = "Un desayuno romantico en nuestra luna de miel";
-                ViewBag.costo = 30000; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/desayuno.bmp";
-                ViewBag.precioVisible = "d-none";       
-            }
-            if (opcion == "2") {
-                ViewBag.titulo_producto = "Experiencia Outdoor";
-                ViewBag.descripcion_producto = "Experiencia al aire libre en nuestra luna de miel";
-                ViewBag.costo = 50000; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/ExperienciaOutdoor.png";
-                ViewBag.precioVisible = "d-none";
-            }
-            if (opcion == "3")
+
+            switch (opcion)
             {
-                ViewBag.titulo_producto = "Dia de Spa";
-                ViewBag.descripcion_producto = "Un dia entero dedicado a relajarnos en un Spa. ";
-                ViewBag.costo = 60000; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/desayuno-luna-de-miel.jpg";
-                ViewBag.precioVisible = "d-none";
-            }
-            if (opcion == "4")
-            {
-                ViewBag.titulo_producto = "Cena romantica";
-                ViewBag.descripcion_producto = "Una noche romantica e inolvidable en nuestra luna de miel";
-                ViewBag.costo = 80000; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/cena romantica.jpg";
-                ViewBag.precioVisible = "d-none";
-            }
-            if (opcion == "5")
-            {
-                ViewBag.titulo_producto = "Noche de hotel";
-                ViewBag.descripcion_producto = "Una noche de estadia en un hotel lujoso para nosotros";
-                ViewBag.costo = 100000; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/hotellunademiel.jpg";
-                ViewBag.precioVisible = "d-none";
-            }
-            else
-            {
-                ViewBag.titulo_producto = "Noche de hotel";
-                ViewBag.descripcion_producto = "Una noche de estadia en un hotel lujoso para nosotros";
-                ViewBag.costo = 0; //Remember to parse into a number
-                ViewBag.rutaImagen = "/img/regalos/hotellunademiel.jpg";
-                ViewBag.precioVisible = "";
+                case "1":
+                    ViewBag.titulo_producto = "Desayuno en luna de miel";
+                    ViewBag.descripcion_producto = "Un desayuno romantico en nuestra luna de miel";
+                    ViewBag.costo = 30000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/desayuno.bmp";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "2":
+                    ViewBag.titulo_producto = "Experiencia Outdoor";
+                    ViewBag.descripcion_producto = "Experiencia al aire libre en nuestra luna de miel";
+                    ViewBag.costo = 50000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/ExperienciaOutdoor.png";
+                    ViewBag.precioVisible = "d-none";
+                    break ;
+                case "3":
+                    ViewBag.titulo_producto = "Dia de Spa";
+                    ViewBag.descripcion_producto = "Un dia entero dedicado a relajarnos en un Spa. ";
+                    ViewBag.costo = 60000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/desayuno-luna-de-miel.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "4":
+                    ViewBag.titulo_producto = "Cena romantica";
+                    ViewBag.descripcion_producto = "Una noche romantica e inolvidable en nuestra luna de miel";
+                    ViewBag.costo = 80000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/cena romantica.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "5":
+                    ViewBag.titulo_producto = "Noche de hotel";
+                    ViewBag.descripcion_producto = "Una noche de estadia en un hotel lujoso para nosotros";
+                    ViewBag.costo = 100000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/hotellunademiel.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "6":
+                    ViewBag.titulo_producto = "Paisajismo para nuestra casa propia";
+                    ViewBag.descripcion_producto = "Aporte para el paisajismo de nuestra casa";
+                    ViewBag.costo = 120000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/PaisajismoCasaPropia.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "7":
+                    ViewBag.titulo_producto = "Tour de Luna de Miel";
+                    ViewBag.descripcion_producto = "un Tour en nuestra luna de miel, para hacer un viaje inolvidable";
+                    ViewBag.costo = 130000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/tourlunademiel.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "8":
+                    ViewBag.titulo_producto = "Pasajes Luna de miel";
+                    ViewBag.descripcion_producto = "Un aporte para nuestros pasajes para un viaje inolvidable";
+                    ViewBag.costo = 160000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/tourlunademiel.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "9":
+                    ViewBag.titulo_producto = "Tour de Luna de Miel";
+                    ViewBag.descripcion_producto = "un Tour en nuestra luna de miel, para hacer un viaje inolvidable";
+                    ViewBag.costo = 120000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/tourlunademiel.jpg";
+                    ViewBag.precioVisible = "d-none";
+
+
+
+
+
+
 
             }
+
+
+
+
+
 
 
             return View();
