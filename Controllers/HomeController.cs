@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -192,7 +192,7 @@ namespace weddingWebapp.Controllers
                     ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
                     ViewBag.costo = 0; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/img-13.jpg";
-                    ViewBag.precioVisible = "d-none";
+                    ViewBag.precioVisible = "";
                     break;
 
             }
