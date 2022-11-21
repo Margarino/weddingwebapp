@@ -35,7 +35,7 @@ namespace weddingWebapp
             services.AddSingleton<HelperMail>();
 
             services.AddControllersWithViews();
-            services.AddDbContext<matrimak_Context>(options =>options.UseMySQL("Server = localhost; port = 3306; Database = matrimak_; Uid = root; Pwd = 1984; ")); ///FUC K used to be root / 1984   |||  Uid = weddingdev; Pwd = securepassword.123; 
+            services.AddDbContext<matrimak_Context>(options =>options.UseMySQL("Server = localhost; port = 3306; Database = matrimak_; Uid = weddingdev; Pwd = securepassword.123; ")); ///FUC K used to be root / 1984   |||  Uid = weddingdev; Pwd = securepassword.123; 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
