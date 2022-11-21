@@ -149,21 +149,51 @@ namespace weddingWebapp.Controllers
                     ViewBag.titulo_producto = "Pasajes Luna de miel";
                     ViewBag.descripcion_producto = "Un aporte para nuestros pasajes para un viaje inolvidable";
                     ViewBag.costo = 160000; //Remember to parse into a number
-                    ViewBag.rutaImagen = "/img/regalos/tourlunademiel.jpg";
+                    ViewBag.rutaImagen = "/img/regalos/PasajesLunaDeMiel.png";
                     ViewBag.precioVisible = "d-none";
                     break;
                 case "9":
-                    ViewBag.titulo_producto = "Tour de Luna de Miel";
-                    ViewBag.descripcion_producto = "un Tour en nuestra luna de miel, para hacer un viaje inolvidable";
-                    ViewBag.costo = 120000; //Remember to parse into a number
-                    ViewBag.rutaImagen = "/img/regalos/tourlunademiel.jpg";
+                    ViewBag.titulo_producto = "Renovacion de muebles para nuestra casa";
+                    ViewBag.descripcion_producto = "Un aporte para nuestro muebles de nuestra propia casa";
+                    ViewBag.costo = 250000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/renovacionmuebles.jpg";
                     ViewBag.precioVisible = "d-none";
-
-
-
-
-
-
+                    break ;
+                case "10":
+                    ViewBag.titulo_producto = "Aporte de 300000 para nuestra casa";
+                    ViewBag.descripcion_producto = "un aporte para lograr nuestra meta de la casa propia";
+                    ViewBag.costo = 300000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/aportecasa1.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "11":
+                    ViewBag.titulo_producto = "Aporte de 400000 para nuestra casa";
+                    ViewBag.descripcion_producto = "un aporte para lograr nuestra meta de la casa propia";
+                    ViewBag.costo = 400000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/aportecasa2.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "12":
+                    ViewBag.titulo_producto = "Aporte de 500000 para nuestra casa";
+                    ViewBag.descripcion_producto = "un aporte para lograr nuestra meta de la casa propia";
+                    ViewBag.costo = 500000; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/regalos/aportecasa3.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                case "13":
+                    ViewBag.titulo_producto = "El regalo que tu quieras";
+                    ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
+                    ViewBag.costo = 0; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/img-13.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
+                default:
+                    ViewBag.titulo_producto = "El regalo que tu quieras";
+                    ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
+                    ViewBag.costo = 0; //Remember to parse into a number
+                    ViewBag.rutaImagen = "/img/img-13.jpg";
+                    ViewBag.precioVisible = "d-none";
+                    break;
 
             }
 
