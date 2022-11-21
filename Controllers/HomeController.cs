@@ -19,6 +19,7 @@ using System.Security.Cryptography;
 
 using System.Net.Mail;  // g(old)
 using weddingWebapp.DataAccess.DataObjects;
+using System.Xml.Linq;
 
 namespace weddingWebapp.Controllers
 {
@@ -90,13 +91,12 @@ namespace weddingWebapp.Controllers
 
         public IActionResult Regalo()
         {
-            string name = "John Doe";
-            if (!String.IsNullOrEmpty(HttpContext.Request.Query["name"]))
-                name = HttpContext.Request.Query["name"];
-
-            Console.WriteLine(name);
-
-            ViewBag.titulo_producto = name;
+           string opcion = HttpContext.Request.Query["name"];
+            if (opcion == "1") {
+                ViewBag.titulo_producto = "wea";
+                ViewBag.descripcion_producto = "asd";
+            }
+           
 
             return View();
         }
