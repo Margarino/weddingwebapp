@@ -6,5 +6,6 @@
         public string Email { get; set; }
         public string Nota { get; set; }
         public string Monto { get; set; }
+        public string NombreRegalo { get; set; }
     }
 }

@@ -120,9 +120,15 @@ https://templatemo.com/tm-556-catalog-z
 
                          <div class="form-group @ViewBag.precioVisible ">
                              <label asp-for="Monto" class="form-label">Monto</label>
-                            <input asp-for="Monto" class="form-control" value="@ViewBag.costo" />
+                             <input asp-for="Monto" class="form-control" value="@ViewBag.costo" />
                              <span asp-validation-for="Monto" class="text-danger"></span>
                           </div>
+
+                        <div class="form-group @ViewBag.precioVisible ">
+                            <label asp-for="NombreRegalo" class="form-label">NombreRegalo</label>
+                            <input asp-for="NombreRegalo" class="form-control" value="@ViewBag.titulo_producto" />
+                            <span asp-validation-for="NombreRegalo" class="text-danger"></span>
+                        </div>
 
                          <div class="form-group">
                              <input type="submit" value="Regalo" class="btn btn-primary" />
