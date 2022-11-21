@@ -91,7 +91,7 @@ namespace weddingWebapp.Controllers
 
         public IActionResult Regalo()
         {
-           string opcion = HttpContext.Request.Query["name"];
+            string opcion = HttpContext.Request.Query["opcion"].ToString();
             if (opcion == "1") {
                 ViewBag.titulo_producto = "wea";
                 ViewBag.descripcion_producto = "asd";
