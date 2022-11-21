@@ -39,6 +39,11 @@ namespace weddingWebapp.DataAccess.DataObjects
 
                 entity.Property(e => e.Idregalo).HasColumnName("idregalo");
 
+                entity.Property(e => e.Correo)
+                    .IsRequired()
+                    .HasMaxLength(500)
+                    .HasColumnName("correo");
+
                 entity.Property(e => e.Monto).HasColumnName("monto");
 
                 entity.Property(e => e.NombreRegalo)

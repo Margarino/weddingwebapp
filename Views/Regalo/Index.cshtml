@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<div class="container-fluid">
+    <a asp-action="pushToTable">Exportar a Excel</a>
+
+
+</div>
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -23,6 +32,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Notaregalo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
             </th>
             <th></th>
         </tr>
@@ -41,6 +53,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Notaregalo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Idregalo">Edit</a> |

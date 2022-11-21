@@ -12,5 +12,6 @@ namespace weddingWebapp.DataAccess.DataObjects
         public string NombreUsuario { get; set; }
         public int Monto { get; set; }
         public string Notaregalo { get; set; }
+        public string Correo { get; set; }
     }
 }

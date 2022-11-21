@@ -11,22 +11,22 @@ using weddingWebapp.DataAccess.DataObjects;
 
 namespace weddingWebapp.Controllers
 {
-    public class RegaloesController : Controller
+    public class RegaloController : Controller
     {
         private readonly matrimak_Context _context;
 
-        public RegaloesController(matrimak_Context context)
+        public RegaloController(matrimak_Context context)
         {
             _context = context;
         }
 
-        // GET: Regaloes
+        // GET: Regalo
         public async Task<IActionResult> Index()
         {
             return View(await _context.Regalos.ToListAsync());
         }
 
-        // GET: Regaloes/Details/5
+        // GET: Regalo/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,18 +44,18 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regaloes/Create
+        // GET: Regalo/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Regaloes/Create
+        // POST: Regalo/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo")] Regalo regalo)
+        public async Task<IActionResult> Create([Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo,Correo")] Regalo regalo)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regaloes/Edit/5
+        // GET: Regalo/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,12 +82,12 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // POST: Regaloes/Edit/5
+        // POST: Regalo/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo")] Regalo regalo)
+        public async Task<IActionResult> Edit(int id, [Bind("Idregalo,NombreRegalo,NombreUsuario,Monto,Notaregalo,Correo")] Regalo regalo)
         {
             if (id != regalo.Idregalo)
             {
@@ -117,7 +117,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // GET: Regaloes/Delete/5
+        // GET: Regalo/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,7 +135,7 @@ namespace weddingWebapp.Controllers
             return View(regalo);
         }
 
-        // POST: Regaloes/Delete/5
+        // POST: Regalo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -151,7 +151,7 @@ namespace weddingWebapp.Controllers
             return _context.Regalos.Any(e => e.Idregalo == id);
         }
 
-        public IActionResult pushToTable()
+        public IActionResult pushToTable()  //pushes current regalo to array and then to memory stream
         {
             matrimak_Context contex = new matrimak_Context();
             var memoryStream = new MemoryStream();
@@ -167,6 +167,8 @@ namespace weddingWebapp.Controllers
             return File(memoryStream, contentType, filename);
 
         }
+
+
 
 
 

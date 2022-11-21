@@ -27,3 +27,27 @@ namespace weddingWebapp
         }
     }
 }
+
+
+
+
+/*/
+ * 
+public IActionResult pushToTable()  //pushes current regalo to array and then to memory stream
+{
+    matrimak_Context contex = new matrimak_Context();
+    var memoryStream = new MemoryStream();
+    var data = contex.Regalos.ToArray();
+    ExcelPackage.LicenseContext = LicenseContext.NonCommercial; //you greedy fucks
+    ExcelPackage excel = new ExcelPackage();
+    var workSheet = excel.Workbook.Worksheets.Add("Lista Regalos");
+    workSheet.Cells[1, 1].LoadFromCollection(data, true);
+    excel.SaveAs(memoryStream);
+    memoryStream.Position = 0;
+    string filename = "Lista Regalos.xlsx";
+    string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+    return File(memoryStream, contentType, filename);
+
+}
+
+/*/

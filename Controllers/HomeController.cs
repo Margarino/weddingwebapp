@@ -18,7 +18,7 @@ using System.Security.Cryptography;
 
 
 using System.Net.Mail;  // g(old)
-
+using weddingWebapp.DataAccess.DataObjects;
 
 namespace weddingWebapp.Controllers
 {
@@ -60,6 +60,12 @@ namespace weddingWebapp.Controllers
             return View();
         }
 
+        public IActionResult Email()
+        {
+            return View();
+        }
+
+
 
 
         [HttpPost]
@@ -88,17 +94,27 @@ namespace weddingWebapp.Controllers
         }
  
         [HttpPost]
-        public IActionResult Regalo(MailModel aux)
+        public async Task<IActionResult> Regalo(MailModel aux)
         {
             
             //string mensajefinal = "<h1>Proyecto Techclub Tajamar(MVC NetCore Correos)<h1/> <h4>"+aux.Nota.ToString()+"</h4>";
 
+            matrimak_Context modelcontext = new matrimak_Context();
+
+            Regalo regalo = new Regalo();
+
+            regalo.NombreUsuario = aux.Nombre;
+            regalo.Notaregalo = aux.Nota;
+            regalo.NombreRegalo = "Desayuno luna de miel";
+            regalo.Monto = 30000; ///Change as needed on different methods
+            
+            modelcontext.Add(regalo);
+            modelcontext.SaveChanges();
 
             helpermail.SendMail(aux.Email, "Gracias por tu regalo!", "Muchas gracias por tu regalo! aqui tu mensaje: "+aux.Nota+" para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en" +
                 " 003270023807 Cuenta corriente bco chile 17118339-1    RMuencke@hotmail.com  ");
             ViewData["MENSAJE"] = "Mensaje enviado a " + aux.Email.ToString();
             return View();
-
         }
 
 
