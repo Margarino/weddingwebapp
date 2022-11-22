@@ -38,7 +38,7 @@ namespace weddingWebapp.Helpers
                 this.configuration.GetValue<string>("MailSettings:host");
 
             SmtpClient client = new SmtpClient();
-            client.Port = 587;
+            client.Port = 465;  ///aaaaaaaaaaaaaa
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Host = host;
