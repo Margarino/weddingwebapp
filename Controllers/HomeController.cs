@@ -225,7 +225,8 @@ namespace weddingWebapp.Controllers
 
             modelcontext.Add(regalo);
             modelcontext.SaveChanges();
-
+            
+            RedirectToAction("Email");  //aight lets give it a shot
 
 
             try
@@ -243,6 +244,85 @@ namespace weddingWebapp.Controllers
             }
             
         }
+
+        public async Task<IActionResult> RegaloLibre()
+        {
+
+            ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
+            ViewBag.costo = 0; //Remember to parse into a number
+            ViewBag.rutaImagen = "/img/img-13.jpg";
+            ViewBag.precioVisible = "";
+
+
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RegaloLibre(MailModel aux)
+        {
+            matrimak_Context modelcontext = new matrimak_Context();
+
+            Regalo regalo = new Regalo();
+
+            regalo.NombreUsuario = aux.Nombre;
+            regalo.Notaregalo = aux.Nota;
+            regalo.NombreRegalo = aux.NombreRegalo;
+            regalo.Monto = aux.Monto;
+            regalo.Correo = aux.Email;
+
+            Console.WriteLine(aux.Monto.ToString() + aux.Email + aux.Nombre + aux.NombreRegalo + aux.Nota);
+            Console.WriteLine(regalo.NombreUsuario + regalo.NombreRegalo + regalo.Idregalo + regalo.Monto + regalo.Notaregalo + regalo.Correo);
+
+
+            modelcontext.Add(regalo);
+            modelcontext.SaveChanges();
+
+            RedirectToAction("Email");  //aight lets give it a shot
+
+
+            try
+            {
+                helpermail.SendMail(aux.Email, "Comprobante de tu regalo", "<h1>Gracias por tu regalo " + aux.Nombre + "! </h1> <p>para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en</p>" +
+                " <p>003270023807</p> <p>Cuenta corriente bco chile</p> <p>17118339-1</p>  <p>RMuencke@hotmail.com</p> <p>Recuerda enviarnos tu comprobante de deposito al correo RMuencke@hotmail.com y porsupuesto muchisimas gracias, esperamos verte en nuestra boda. </p> ");
+                ViewData["MENSAJE"] = "Mensaje enviado a " + aux.Email.ToString();
+                return RedirectToAction("Email");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return RedirectToAction("Email");
+
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
