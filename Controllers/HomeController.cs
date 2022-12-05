@@ -77,7 +77,7 @@ namespace weddingWebapp.Controllers
             {
                 if (aux.username == "mantenedorRegalos" && aux.password == "SecurePassword.123")
                 {
-                    return RedirectToAction("Index", "Regaloes");
+                    return RedirectToAction("Index", "Regalo");
                 }
                 
             }
@@ -226,9 +226,9 @@ namespace weddingWebapp.Controllers
             modelcontext.Add(regalo);
             modelcontext.SaveChanges();
             
-            RedirectToAction("Email");  //aight lets give it a shot
+            return RedirectToAction("Email");  //aight lets give it a shot
 
-
+            /*/
             try
             {
                 helpermail.SendMail(aux.Email, "Comprobante de tu regalo", "<h1>Gracias por tu regalo " + aux.Nombre + "! </h1> <p>para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en</p>" +
@@ -242,6 +242,7 @@ namespace weddingWebapp.Controllers
                 return RedirectToAction("Email");
 
             }
+            /*/
             
         }
 
@@ -278,9 +279,9 @@ namespace weddingWebapp.Controllers
             modelcontext.Add(regalo);
             modelcontext.SaveChanges();
 
-            RedirectToAction("Email");  //aight lets give it a shot
+            return RedirectToAction("Email");  //aight lets give it a shot
 
-
+            /*/
             try
             {
                 helpermail.SendMail(aux.Email, "Comprobante de tu regalo", "<h1>Gracias por tu regalo " + aux.Nombre + "! </h1> <p>para terminar el proceso envianos un mensaje a este correo y depositanos el monto del regalo en</p>" +
@@ -294,34 +295,11 @@ namespace weddingWebapp.Controllers
                 return RedirectToAction("Email");
 
             }
-
+            /*/
 
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
