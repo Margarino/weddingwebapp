@@ -592,10 +592,11 @@ select:not([multiple]) {
 
 @media (max-width: 991px) {
     .navbar-collapse {
+        z-index:1;
         position: absolute;
         left: 0px;
-        top: 50px;
-        background: #bfa784; /*used to be white */
+        top: 45px;
+        background: whitesmoke;
         width: 150px;
         padding: 15px;
     }
