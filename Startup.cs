@@ -41,7 +41,7 @@ namespace weddingWebapp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseExceptionHandler("/Home/Error"); //this is a security concern 
+            app.UseExceptionHandler("/Home/Error"); //this is a security concern // is it tho? you should make a better error screen 
             app.UseHsts();
             
             app.UseHttpsRedirection();
