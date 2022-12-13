@@ -656,8 +656,8 @@ select:not([multiple]) {
     background-size: cover;
 }
 .cool-font {
-    font-family: "Lucida Handwriting", "Lucida Handwriting", Cursive;
-    color:black;
+    font-family: "Felix Titling", "Felix Titling", Cursive; /* cambiar Lucida Handwriting a Felix Titling*/ 
+    color: black;
 }
 
 .whatsapp-logo {
