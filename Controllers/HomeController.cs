@@ -98,7 +98,7 @@ namespace weddingWebapp.Controllers
             {
                 case "1":
                     ViewBag.titulo_producto = "Desayuno en luna de miel";
-                    ViewBag.descripcion_producto = "Un desayuno romantico en nuestra luna de miel";
+                    ViewBag.descripcion_producto = "Un desayuno romántico en nuestra luna de miel";
                     ViewBag.costo = 30000; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/regalos/desayuno.bmp";
                     ViewBag.precioVisible = "d-none";
@@ -111,22 +111,22 @@ namespace weddingWebapp.Controllers
                     ViewBag.precioVisible = "d-none";
                     break ;
                 case "3":
-                    ViewBag.titulo_producto = "Dia de Spa";
-                    ViewBag.descripcion_producto = "Un dia entero dedicado a relajarnos en un Spa. ";
+                    ViewBag.titulo_producto = "Día de Spa";
+                    ViewBag.descripcion_producto = "Un día entero dedicado a relajarnos en un Spa. ";
                     ViewBag.costo = 60000; //Remember to parse into a number
-                    ViewBag.rutaImagen = "/img/regalos/desayuno-luna-de-miel.jpg";
+                    ViewBag.rutaImagen = "/img/regalos/spa.jpg";
                     ViewBag.precioVisible = "d-none";
                     break;
                 case "4":
-                    ViewBag.titulo_producto = "Cena romantica";
-                    ViewBag.descripcion_producto = "Una noche romantica e inolvidable en nuestra luna de miel";
+                    ViewBag.titulo_producto = "Cena romántica";
+                    ViewBag.descripcion_producto = "Una noche romántica e inolvidable en nuestra luna de miel";
                     ViewBag.costo = 80000; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/regalos/cena romantica.jpg";
                     ViewBag.precioVisible = "d-none";
                     break;
                 case "5":
                     ViewBag.titulo_producto = "Noche de hotel";
-                    ViewBag.descripcion_producto = "Una noche de estadia en un hotel lujoso para nosotros";
+                    ViewBag.descripcion_producto = "Una noche de estadía en un hotel lujoso para nosotros";
                     ViewBag.costo = 100000; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/regalos/hotellunademiel.jpg";
                     ViewBag.precioVisible = "d-none";
@@ -153,8 +153,8 @@ namespace weddingWebapp.Controllers
                     ViewBag.precioVisible = "d-none";
                     break;
                 case "9":
-                    ViewBag.titulo_producto = "Renovacion de muebles para nuestra casa";
-                    ViewBag.descripcion_producto = "Un aporte para nuestro muebles de nuestra propia casa";
+                    ViewBag.titulo_producto = "Renovación de muebles para nuestra casa";
+                    ViewBag.descripcion_producto = "Un aporte para nuestros muebles de nuestra casa";
                     ViewBag.costo = 250000; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/regalos/renovacionmuebles.jpg";
                     ViewBag.precioVisible = "d-none";
@@ -181,15 +181,15 @@ namespace weddingWebapp.Controllers
                     ViewBag.precioVisible = "d-none";
                     break;
                 case "13":
-                    ViewBag.titulo_producto = "El regalo que tu quieras";
-                    ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
+                    ViewBag.titulo_producto = "El regalo que tú quieras";
+                    ViewBag.descripcion_producto = "Danos el regalo que tú quieras y te estaremos agradecidos por ello";
                     ViewBag.costo = 0; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/img-13.jpg";
                     ViewBag.precioVisible = "d-none";
                     break;
                 default:
-                    ViewBag.titulo_producto = "El regalo que tu quieras";
-                    ViewBag.descripcion_producto = "Danos el regalo que tu quieras y te estaremos agradecidos por ello";
+                    ViewBag.titulo_producto = "El regalo que tú quieras";
+                    ViewBag.descripcion_producto = "Danos el regalo que tú quieras y te estaremos agradecidos por ello";
                     ViewBag.costo = 0; //Remember to parse into a number
                     ViewBag.rutaImagen = "/img/img-13.jpg";
                     ViewBag.precioVisible = "";
